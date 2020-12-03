@@ -13,4 +13,3 @@ configure_file (
     add_executable(Tutorial tutorial.cxx)
 include_directories("${PROJECT_BINARY_DIR}")
 #添加可执行文件
-    add_executable(Tutorial tutorial.cxx)
