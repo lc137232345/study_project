@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/MathFunctions.h
+
+../include/config.h
+
+/home/lc/code/study_project/fsm_study/src/MathFunctions.cc
+
+/home/lc/code/study_project/fsm_study/src/main.cc
+stdio.h
+-
+stdlib.h
+-
+config.h
+-
+MathFunctions.h
+-
+math.h
+-
+

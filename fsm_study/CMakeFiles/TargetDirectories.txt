@@ -1,3 +1,0 @@
-/home/lc/code/study_project/fsm_study/CMakeFiles/rebuild_cache.dir
-/home/lc/code/study_project/fsm_study/CMakeFiles/edit_cache.dir
-/home/lc/code/study_project/fsm_study/CMakeFiles/Tutorial.dir
