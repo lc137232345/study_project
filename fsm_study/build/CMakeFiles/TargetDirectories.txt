@@ -1,3 +1,5 @@
 /home/lc/code/study_project/fsm_study/build/CMakeFiles/rebuild_cache.dir
 /home/lc/code/study_project/fsm_study/build/CMakeFiles/edit_cache.dir
+/home/lc/code/study_project/fsm_study/build/CMakeFiles/package_source.dir
+/home/lc/code/study_project/fsm_study/build/CMakeFiles/package.dir
 /home/lc/code/study_project/fsm_study/build/CMakeFiles/demo.dir
