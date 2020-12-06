@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/demo.h
+iostream
+-
+
+/home/lc/code/study_project/fsm_study/src/main.cpp
+iostream
+-
+demo.h
+/home/lc/code/study_project/fsm_study/src/demo.h
+

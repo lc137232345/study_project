@@ -1,12 +1,6 @@
-# CMake 最低版本号要求
-cmake_minimum_required (VERSION 2.8)
-
-# 项目信息
-project (Demo4)
-
-
-aux_source_directory(src SRC_LIST)
+cmake_minimum_required(VERSION 3.1)
+project(MyDEMO)
 include_directories(include)
-# 指定生成目标
-add_executable (Demo ${SRC_LIST})
+aux_source_directory(src DIR_SRC)
+add_executable(demo ${DIR_SRC})
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
