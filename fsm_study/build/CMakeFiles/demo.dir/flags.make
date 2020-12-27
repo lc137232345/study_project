@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/lc/code/study_project/fsm_study/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = -g -std=gnu++11
 
