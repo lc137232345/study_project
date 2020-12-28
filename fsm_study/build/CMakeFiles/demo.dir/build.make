@@ -79,28 +79,28 @@ include CMakeFiles/demo.dir/flags.make
 CMakeFiles/demo.dir/src/demo.cpp.o: CMakeFiles/demo.dir/flags.make
 CMakeFiles/demo.dir/src/demo.cpp.o: ../src/demo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lc/code/study_project/fsm_study/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/demo.dir/src/demo.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/demo.cpp.o -c /home/lc/code/study_project/fsm_study/src/demo.cpp
+	/usr/bin/g++-4.8.5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/demo.cpp.o -c /home/lc/code/study_project/fsm_study/src/demo.cpp
 
 CMakeFiles/demo.dir/src/demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/demo.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lc/code/study_project/fsm_study/src/demo.cpp > CMakeFiles/demo.dir/src/demo.cpp.i
+	/usr/bin/g++-4.8.5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lc/code/study_project/fsm_study/src/demo.cpp > CMakeFiles/demo.dir/src/demo.cpp.i
 
 CMakeFiles/demo.dir/src/demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/demo.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lc/code/study_project/fsm_study/src/demo.cpp -o CMakeFiles/demo.dir/src/demo.cpp.s
+	/usr/bin/g++-4.8.5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lc/code/study_project/fsm_study/src/demo.cpp -o CMakeFiles/demo.dir/src/demo.cpp.s
 
 CMakeFiles/demo.dir/src/main.cpp.o: CMakeFiles/demo.dir/flags.make
 CMakeFiles/demo.dir/src/main.cpp.o: ../src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lc/code/study_project/fsm_study/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/demo.dir/src/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/main.cpp.o -c /home/lc/code/study_project/fsm_study/src/main.cpp
+	/usr/bin/g++-4.8.5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/main.cpp.o -c /home/lc/code/study_project/fsm_study/src/main.cpp
 
 CMakeFiles/demo.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lc/code/study_project/fsm_study/src/main.cpp > CMakeFiles/demo.dir/src/main.cpp.i
+	/usr/bin/g++-4.8.5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lc/code/study_project/fsm_study/src/main.cpp > CMakeFiles/demo.dir/src/main.cpp.i
 
 CMakeFiles/demo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lc/code/study_project/fsm_study/src/main.cpp -o CMakeFiles/demo.dir/src/main.cpp.s
+	/usr/bin/g++-4.8.5 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lc/code/study_project/fsm_study/src/main.cpp -o CMakeFiles/demo.dir/src/main.cpp.s
 
 # Object files for target demo
 demo_OBJECTS = \
