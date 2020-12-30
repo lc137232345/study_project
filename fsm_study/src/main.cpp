@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-05 06:34:10
- * @LastEditTime: 2020-12-27 08:15:22
+ * @LastEditTime: 2020-12-29 04:30:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /code/study_project/fsm_study/src/main.cpp
@@ -39,11 +39,16 @@ int main(int argc, char const *argv[])
 #endif
     std::size_t idx;
     string s = "127";
-    int a = stoi(s, &idx, 2);
+    const char *s11 = s.c_str();
+    char s22[20] = "12312";
+    char *s33 = s22;
+    s.copy(s33, s.size() - 1);
+    s33[3] = 9;
+    std::cout
+        << s33 << std::endl;
+    const string s2 = "5";
 
-    std::cout << a << std::endl;
+    cout << s.find_first_of("1") << std::endl;
 
-    std::cout << s.capacity() << std::endl;
-    std::cout << idx << std::endl;
     return 0;
 }
