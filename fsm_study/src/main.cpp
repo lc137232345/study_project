@@ -8,11 +8,13 @@
  */
 #include <iostream>
 #include "demo.h"
+#include <array>
 void test(const int &a)
 {
     std::cout << a << std::endl;
     //a = 11;
 }
+using namespace std;
 int main(int argc, char const *argv[])
 {
 #if 0
@@ -38,17 +40,16 @@ int main(int argc, char const *argv[])
     delete solution;
 #endif
     std::size_t idx;
-    string s = "127";
-    const char *s11 = s.c_str();
-    char s22[20] = "12312";
-    char *s33 = s22;
-    s.copy(s33, s.size() - 1);
-    s33[3] = 9;
-    std::cout
-        << s33 << std::endl;
-    const string s2 = "5";
-
-    cout << s.find_first_of("1") << std::endl;
+    array<char, 6> as = {'1', '2', '3', '4', '5', '6'};
+    std::cout << as.data() << std::endl;
+    for (auto &a : as)
+    {
+        a = '0';
+    }
+    for (auto a : as)
+    {
+        std::cout << a << std::endl;
+    }
 
     return 0;
 }

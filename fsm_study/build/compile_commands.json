@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/lc/code/study_project/fsm_study/build",
-  "command": "/usr/bin/g++-4.8.5  -I/home/lc/code/study_project/fsm_study/include -g -std=gnu++11 -o CMakeFiles/demo.dir/src/demo.cpp.o -c /home/lc/code/study_project/fsm_study/src/demo.cpp",
+  "command": "/usr/bin/g++  -I/home/lc/code/study_project/fsm_study/include -g -std=gnu++11 -o CMakeFiles/demo.dir/src/demo.cpp.o -c /home/lc/code/study_project/fsm_study/src/demo.cpp",
   "file": "/home/lc/code/study_project/fsm_study/src/demo.cpp"
 },
 {
   "directory": "/home/lc/code/study_project/fsm_study/build",
-  "command": "/usr/bin/g++-4.8.5  -I/home/lc/code/study_project/fsm_study/include -g -std=gnu++11 -o CMakeFiles/demo.dir/src/main.cpp.o -c /home/lc/code/study_project/fsm_study/src/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lc/code/study_project/fsm_study/include -g -std=gnu++11 -o CMakeFiles/demo.dir/src/main.cpp.o -c /home/lc/code/study_project/fsm_study/src/main.cpp",
   "file": "/home/lc/code/study_project/fsm_study/src/main.cpp"
 }
 ]
