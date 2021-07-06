@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-05 06:34:10
- * @LastEditTime: 2020-12-29 04:30:08
+ * @LastEditTime: 2021-07-06 08:12:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /code/study_project/fsm_study/src/main.cpp
@@ -9,6 +9,7 @@
 #include <iostream>
 #include "demo.h"
 #include <array>
+#include <thread>
 void test(const int &a)
 {
     std::cout << a << std::endl;
@@ -38,7 +39,7 @@ int main(int argc, char const *argv[])
     // solution->restoreString(s, indices);
     std::cout << solution->restoreString(s, indices) << std::endl;
     delete solution;
-#endif
+
     std::size_t idx;
     array<char, 6> as = {'1', '2', '3', '4', '5', '6'};
     std::cout << as.data() << std::endl;
@@ -50,6 +51,11 @@ int main(int argc, char const *argv[])
     {
         std::cout << a << std::endl;
     }
+#endif
 
+    std::thread t1(test, 2);
+    std::thread t2(test, 4);
+    t1.join();
+    t2.join();
     return 0;
 }

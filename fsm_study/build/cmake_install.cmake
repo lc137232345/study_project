@@ -1,4 +1,4 @@
-# Install script for directory: /home/lc/code/study_project/fsm_study
+# Install script for directory: /home/lc/study_project/fsm_study
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lc/code/study_project/fsm_study/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lc/study_project/fsm_study/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
