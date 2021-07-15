@@ -1,61 +1,77 @@
 /*
  * @Author: your name
- * @Date: 2020-12-05 06:34:10
- * @LastEditTime: 2021-07-06 08:12:55
+ * @Date: 2021-07-14 18:30:48
+ * @LastEditTime: 2021-07-14 19:25:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: /code/study_project/fsm_study/src/main.cpp
+ * @FilePath: /study_project/src/main.cpp
  */
-#include <iostream>
-#include "demo.h"
-#include <array>
-#include <thread>
-void test(const int &a)
+#include <stdio.h>
+#include <string.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <mutex>
+#include "ShapeFactory.h"
+std::mutex mutex1; //定义锁
+
+void *tfn(void *arg)
 {
-    std::cout << a << std::endl;
-    //a = 11;
+
+    while (1)
+    {
+        std::lock_guard<std::mutex> lock(mutex1);
+
+        printf("hello ");
+        sleep(1); /*模拟长时间操作共享资源，导致cpu易主，产生与时间有关的错误*/
+        printf("world\n");
+
+        sleep(1); //睡眠，释放cpu
+    }
+
+    return NULL;
 }
-using namespace std;
-int main(int argc, char const *argv[])
+std::shared_ptr<Shape> test()
+{
+    ShapeFactory *shapeFactory = new ShapeFactory();
+    std::shared_ptr<Shape> shape = shapeFactory->GetShape("CIRCLE");
+    shape->draw();
+
+    std::shared_ptr<Shape> shape1 = shapeFactory->GetShape("RECTANGLE");
+    shape1->draw();
+
+    std::shared_ptr<Shape> shape2 = shapeFactory->GetShape("SQUARE");
+    shape2->draw();
+
+    delete shapeFactory;
+
+    cout << shape.use_count() << endl;
+    cout << shape1.use_count() << endl;
+    cout << shape2.use_count() << endl;
+
+    return shape;
+}
+int main(void)
 {
 #if 0
-    ue_conn_state *ue_conn_stat = new ue_conn_state;
+    pthread_t tid;
 
-    const double pi = 3.14;
-    const int a = 10;
-    test(a);
-    std::cout << a << std::endl;
-    const double *cptr = &pi;
-    double dval = 12.5;
-    cptr = &dval;
-    ue_conn_stat->get_current_state()->show_A();
-    std::cout
-        << "/* message */" << std::endl;
-
-    Solution *solution = new Solution();
-    std::string s = "codeleet";
-    vector<int> indices = {4, 5, 6, 7, 0, 2, 1, 3};
-    // solution->reverseVowels(s);
-    // solution->restoreString(s, indices);
-    std::cout << solution->restoreString(s, indices) << std::endl;
-    delete solution;
-
-    std::size_t idx;
-    array<char, 6> as = {'1', '2', '3', '4', '5', '6'};
-    std::cout << as.data() << std::endl;
-    for (auto &a : as)
+    pthread_create(&tid, NULL, tfn, NULL);
+    while (1)
     {
-        a = '0';
-    }
-    for (auto a : as)
-    {
-        std::cout << a << std::endl;
+        std::unique_lock<std::mutex> lock(mutex);
+        printf("HELLO ");
+        sleep(1);
+        printf("WORLD\n");
+        lock.unlock();
+        sleep(1);
     }
 #endif
-
-    std::thread t1(test, 2);
-    std::thread t2(test, 4);
-    t1.join();
-    t2.join();
+    shared_ptr<Shape> shape = test();
+    shared_ptr<string> name = make_shared<string>("12313");
+    cout << *name << endl;
+    shape->draw();
     return 0;
 }
+
+/*线程之间共享资源stdout*/
