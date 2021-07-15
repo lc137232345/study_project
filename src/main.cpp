@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-14 19:25:48
+ * @LastEditTime: 2021-07-15 05:11:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <mutex>
 #include "ShapeFactory.h"
+#include "Singleton .h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -51,6 +52,23 @@ std::shared_ptr<Shape> test()
 
     return shape;
 }
+
+class MyClass
+{
+public:
+    MyClass(const string &strData) : m_strData(strData)
+    {
+        cout << m_strData.data() << endl;
+    };
+    ~MyClass()
+    {
+        cout << "destory" << endl;
+    };
+
+private:
+    string m_strData;
+};
+
 int main(void)
 {
 #if 0
@@ -66,12 +84,15 @@ int main(void)
         lock.unlock();
         sleep(1);
     }
-#endif
+
     shared_ptr<Shape> shape = test();
     shared_ptr<string> name = make_shared<string>("12313");
     cout << *name << endl;
     shape->draw();
     return 0;
+#endif
+    auto pClass = Magic_Singleton<MyClass>::Getinstance("hello2 3 word");
+    Magic_Singleton<MyClass>::DesInstance();
 }
 
 /*线程之间共享资源stdout*/
