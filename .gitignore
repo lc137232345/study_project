@@ -25,11 +25,12 @@
 *.la
 *.a
 *.lib
-
+build/CMakeCache.txt
 # Executables
 *.exe
 *.out
 *.app
 build/
 bin/
-build/CMakeCache.txt
+
+
