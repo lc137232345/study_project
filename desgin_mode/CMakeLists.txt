@@ -1,0 +1,10 @@
+# 查找当前目录下的所有源文件
+# 并将名称保存到 DIR_LIB_SRCS 变量
+aux_source_directory(./src DIR_LIB_SRCS)
+#include_directories(desgin_mode/include/Factory
+ #  desgin_mode/include/Singleton )
+
+ include_directories(./include)
+
+# 生成链接库
+add_library (DESIGN ${DIR_LIB_SRCS})
