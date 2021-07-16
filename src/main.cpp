@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-15 05:11:58
+ * @LastEditTime: 2021-07-15 19:03:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <mutex>
 #include "ShapeFactory.h"
-#include "Singleton .h"
+#include "Singleton1.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -38,7 +38,7 @@ std::shared_ptr<Shape> test()
     std::shared_ptr<Shape> shape = shapeFactory->GetShape("CIRCLE");
     shape->draw();
 
-    std::shared_ptr<Shape> shape1 = shapeFactory->GetShape("RECTANGLE");
+    std::shared_ptr<Shape> shape1 = shapeFactory->GetShape("RECTANGLE", "123");
     shape1->draw();
 
     std::shared_ptr<Shape> shape2 = shapeFactory->GetShape("SQUARE");
@@ -50,7 +50,7 @@ std::shared_ptr<Shape> test()
     cout << shape1.use_count() << endl;
     cout << shape2.use_count() << endl;
 
-    return shape;
+    return shape1;
 }
 
 class MyClass
@@ -84,15 +84,15 @@ int main(void)
         lock.unlock();
         sleep(1);
     }
-
+#endif
     shared_ptr<Shape> shape = test();
     shared_ptr<string> name = make_shared<string>("12313");
     cout << *name << endl;
     shape->draw();
     return 0;
-#endif
-    auto pClass = Magic_Singleton<MyClass>::Getinstance("hello2 3 word");
-    Magic_Singleton<MyClass>::DesInstance();
+
+    auto pClass = Magic_Singleton1<MyClass>::Getinstance("21", "hello2 3 word");
+    Magic_Singleton1<MyClass>::DesInstance();
 }
 
 /*线程之间共享资源stdout*/
