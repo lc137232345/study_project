@@ -1,21 +1,24 @@
 /*
  * @Author: your name
- * @Date: 2021-07-15 17:36:53
- * @LastEditTime: 2021-07-15 18:51:48
+ * @Date: 2021-07-15 04:37:06
+ * @LastEditTime: 2021-07-16 20:30:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: /study_project/include/Singleton1.h
+ * @FilePath: /study_project/include/Singleton .h
  */
-#include <memory>
+#ifndef MAGIC_SINGLETON_H
+#define MAGIC_SINGLETON_H
+
 #include <mutex>
+#include <memory>
+
 template <typename T>
-class Magic_Singleton1
+class Magic_Singleton
 {
 public:
     template <typename... Args>
-    static std::shared_ptr<T> Getinstance(string name, Args &&...args)
+    static std::shared_ptr<T> Getinstance(Args &&...args)
     {
-        std::cout << name << std::endl;
         if (!m_instance)
         {
             std::lock_guard<std::mutex> lock(m_mutex);
@@ -26,7 +29,6 @@ public:
         }
         return m_instance;
     }
-
     static void DesInstance()
     {
         if (m_instance)
@@ -37,17 +39,19 @@ public:
     }
 
 private:
-    explicit Magic_Singleton1();
-    Magic_Singleton1(const Magic_Singleton1 &) = delete;
-    Magic_Singleton1 &operator=(const Magic_Singleton1 &) = delete;
-    ~Magic_Singleton1();
+    explicit Magic_Singleton();
+    Magic_Singleton(const Magic_Singleton &) = delete;
+    Magic_Singleton &operator=(const Magic_Singleton &) = delete;
+    ~Magic_Singleton();
 
 private:
     static std::shared_ptr<T> m_instance;
     static std::mutex m_mutex;
 };
-template <typename T>
-std::shared_ptr<T> Magic_Singleton1<T>::m_instance = nullptr;
 
 template <typename T>
-std::mutex Magic_Singleton1<T>::m_mutex;
+std::shared_ptr<T> Magic_Singleton<T>::m_instance = nullptr;
+
+template <typename T>
+std::mutex Magic_Singleton<T>::m_mutex;
+#endif

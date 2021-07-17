@@ -11,7 +11,7 @@ set(cmake_c_standard_required on)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 11)
 
-include_directories(desgin_mode/include)
+include_directories(${PROJECT_SOURCE_DIR}/desgin_mode/include)
 
 # 查找当前目录下的所有源文件
 # 并将名称保存到 DIR_SRCS 变量
