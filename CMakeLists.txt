@@ -8,8 +8,8 @@ project (Demo3)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(cmake_c_standard_required on)
 # 指定为C++11 版本
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 14)
 
 include_directories(${PROJECT_SOURCE_DIR}/desgin_mode/include)
 

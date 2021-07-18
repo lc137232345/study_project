@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-16 23:41:08
+ * @LastEditTime: 2021-07-18 07:59:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -12,9 +12,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <mutex>
+#if 1
 #include "ShapeFactory.h"
 #include "Singleton.h"
 #include "Adapter.h"
+#endif
+#include "IDraw.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -33,7 +36,7 @@ void *tfn(void *arg)
 
     return NULL;
 }
-std::shared_ptr<Shape> test()
+Shape *test()
 {
     ShapeFactory *shapeFactory = new ShapeFactory();
     std::shared_ptr<Shape> shape = shapeFactory->GetShape("CIRCLE");
@@ -51,7 +54,15 @@ std::shared_ptr<Shape> test()
     cout << shape1.use_count() << endl;
     cout << shape2.use_count() << endl;
 
-    return shape1;
+    return shape1.get();
+};
+
+void test1(std::shared_ptr<string> &string)
+{
+    cout << "222:" << *string << endl;
+    cout << "address:" << string << endl;
+    cout << "address:" << &string << endl;
+    cout << string.use_count() << endl;
 }
 
 class MyClass
@@ -86,10 +97,7 @@ int main(void)
         sleep(1);
     }
 #endif
-    shared_ptr<Shape> shape = test();
-    shared_ptr<string> name = make_shared<string>("12313");
-
-    cout << *name << endl;
+    auto shape = test();
     shape->draw();
 
     auto pClass = Magic_Singleton<MyClass>::Getinstance("21");
@@ -100,6 +108,19 @@ int main(void)
     auto entity = make_shared<Elecwith5V>();
     entity->charge();
 
+    cout << "桥接模式" << endl;
+
+    // shared_ptr<AShape> shape = make_shared<CircleBridge>(100, 100, 10, new RedCircle());
+    AShape *shape1 = new CircleBridge(100, 100, 10, new GreenCircle());
+    shape1->draw();
+
+    std::shared_ptr<string> string = make_shared<std::string>("123123");
+    cout << "111:" << *string << endl;
+    cout << "address:" << string << endl;
+    cout << "address:" << &string << endl;
+    cout << string.use_count() << endl;
+    test1(string);
+    cout << string.use_count() << endl;
     return 0;
 }
 

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-07 07:03:55
- * @LastEditTime: 2021-07-07 07:46:22
+ * @LastEditTime: 2021-07-18 16:51:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/README.md
@@ -39,3 +39,23 @@ add_library(hello STATIC hello.c 1.c 2.c ...)
 ## ## 2021/07/08
 
 ### 1.学习一个LOG模块
+
+
+
+1、 不要传递shared_ptr本身，而是用原始指针。因为会有性能损失，原子操作的自增自减等。
+
+使用f(widget *w)
+
+不使用f(shared_ptr< widget > w)
+
+函数的返回值也是同样的道理。
+
+2当表示所有权的转移时，用unique_ptr作为函数参数。
+
+
+
+虚函数的话，基类需要有实现；
+			纯虚类的话，可以没有实现;
+			
+			
+2. shared_ptr 传递 的话 ，优先 RAW_PTR,  利用reset函数接受参数。			
