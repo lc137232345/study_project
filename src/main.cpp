@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-18 07:59:14
+ * @LastEditTime: 2021-07-19 18:46:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -18,6 +18,7 @@
 #include "Adapter.h"
 #endif
 #include "IDraw.h"
+#include "Templete.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -121,6 +122,13 @@ int main(void)
     cout << string.use_count() << endl;
     test1(string);
     cout << string.use_count() << endl;
+
+    cout << "模板模式" << endl;
+    shared_ptr<AbstractClass> abstractClass = make_shared<ConcreteClassA>();
+    abstractClass->TemplateMethod();
+    shared_ptr<AbstractClass> abstractClass2 = make_shared<ConcreteClassB>();
+    abstractClass2->TemplateMethod();
+
     return 0;
 }
 
