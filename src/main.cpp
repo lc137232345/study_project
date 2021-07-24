@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-18 07:59:14
+ * @LastEditTime: 2021-07-24 00:56:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -18,6 +18,9 @@
 #include "Adapter.h"
 #endif
 #include "IDraw.h"
+#include "Templete.h"
+#include "Mediator.h"
+#include "Proxy.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -121,6 +124,30 @@ int main(void)
     cout << string.use_count() << endl;
     test1(string);
     cout << string.use_count() << endl;
+
+    cout << "模板模式" << endl;
+    shared_ptr<AbstractClass> abstractClass = make_shared<ConcreteClassA>();
+    abstractClass->TemplateMethod();
+    shared_ptr<AbstractClass> abstractClass2 = make_shared<ConcreteClassB>();
+    abstractClass2->TemplateMethod();
+
+    cout << "中介者模式" << endl;
+    shared_ptr<Mediator> mediator = make_shared<HouseMediator>();
+    shared_ptr<Person> person1 = make_shared<Renter>();
+    shared_ptr<Person> person2 = make_shared<Landlord>();
+    mediator->SetA(person1.get());
+    mediator->SetB(person2.get());
+    person1->SetMediator(mediator.get());
+    person2->SetMediator(mediator.get());
+    person1->SendMessage("我想在南京路附近租套房子，价格800元一个月\n");
+    person2->SendMessage("出租房子：南京路100号，70平米，1000元一个月\n");
+
+    shared_ptr<Iimage> image = make_shared<Proxy>("test_10mb.jpg");
+
+    image->display();
+    cout << endl;
+    image->display();
+
     return 0;
 }
 
