@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-24 00:16:36
+ * @LastEditTime: 2021-07-24 00:56:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -20,6 +20,7 @@
 #include "IDraw.h"
 #include "Templete.h"
 #include "Mediator.h"
+#include "Proxy.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -140,6 +141,12 @@ int main(void)
     person2->SetMediator(mediator.get());
     person1->SendMessage("我想在南京路附近租套房子，价格800元一个月\n");
     person2->SendMessage("出租房子：南京路100号，70平米，1000元一个月\n");
+
+    shared_ptr<Iimage> image = make_shared<Proxy>("test_10mb.jpg");
+
+    image->display();
+    cout << endl;
+    image->display();
 
     return 0;
 }
