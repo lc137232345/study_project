@@ -3,7 +3,10 @@
 aux_source_directory(./src DIR_LIB_SRCS)
 #include_directories(desgin_mode/include/Factory
  #  desgin_mode/include/Singleton )
-
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 14)
+set(CMAKE_C_COMPILER "/usr/bin/gcc")
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
  include_directories(./include)
 
 # 生成链接库
