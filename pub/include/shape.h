@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:05:55
- * @LastEditTime: 2021-07-15 18:21:06
+ * @LastEditTime: 2021-07-24 07:08:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/include/shape.cpp
@@ -18,5 +18,6 @@ class Shape
 
 public:
     virtual void draw() = 0;
+    virtual ~Shape(){};
 };
 #endif

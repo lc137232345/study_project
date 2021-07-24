@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-24 00:56:47
+ * @LastEditTime: 2021-07-24 08:09:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -39,7 +39,7 @@ void *tfn(void *arg)
 
     return NULL;
 }
-Shape *test()
+shared_ptr<Shape> test()
 {
     ShapeFactory *shapeFactory = new ShapeFactory();
     std::shared_ptr<Shape> shape = shapeFactory->GetShape("CIRCLE");
@@ -57,7 +57,7 @@ Shape *test()
     cout << shape1.use_count() << endl;
     cout << shape2.use_count() << endl;
 
-    return shape1.get();
+    return shape1;
 };
 
 void test1(std::shared_ptr<string> &string)
@@ -142,6 +142,7 @@ int main(void)
     person1->SendMessage("我想在南京路附近租套房子，价格800元一个月\n");
     person2->SendMessage("出租房子：南京路100号，70平米，1000元一个月\n");
 
+    cout << "代理模式" << endl;
     shared_ptr<Iimage> image = make_shared<Proxy>("test_10mb.jpg");
 
     image->display();
