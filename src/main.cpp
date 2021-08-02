@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-14 18:30:48
- * @LastEditTime: 2021-07-24 08:09:42
+ * @LastEditTime: 2021-08-02 04:57:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /study_project/src/main.cpp
@@ -21,6 +21,7 @@
 #include "Templete.h"
 #include "Mediator.h"
 #include "Proxy.h"
+#include "State.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -71,17 +72,48 @@ void test1(std::shared_ptr<string> &string)
 class MyClass
 {
 public:
+    MyClass() = default;
     MyClass(const string &strData) : m_strData(strData)
     {
+        cout << "构造函数" << endl;
+        ptstring = make_shared<string>(strData);
+        cout << ptstring.use_count() << endl;
         cout << m_strData.data() << endl;
     };
+    MyClass(const MyClass &other)
+    {
+        std::cout << "MyClass(const MyClass &other)" << std::endl;
+        cout << ptstring.use_count() << endl;
+        m_strData = other.m_strData;
+        std::cout << "MyClass(const MyClass &other)" << std::endl;
+        ptstring = make_shared<string>(*(other.ptstring));
+        // ptstring = other.ptstring;
+        cout << ptstring.use_count() << endl;
+    }
+    MyClass &operator=(const MyClass &other)
+    {
+        cout << "拷贝赋值函数" << endl;
+        m_strData = other.m_strData;
+        cout << ptstring.use_count() << endl;
+        cout << "拷贝赋值函数" << endl;
+        ptstring = other.ptstring;
+        //  ptstring = make_shared<string>(*(other.ptstring));
+        cout << ptstring.use_count() << endl;
+        return *this;
+    }
+    shared_ptr<string> &Getptstring()
+    {
+        return ptstring;
+    }
     ~MyClass()
     {
-        cout << "destory" << endl;
+        cout << "~destory" << endl;
+        cout << ptstring.use_count() << endl;
     };
 
 private:
     string m_strData;
+    shared_ptr<string> ptstring;
 };
 
 int main(void)
@@ -99,7 +131,7 @@ int main(void)
         lock.unlock();
         sleep(1);
     }
-#endif
+
     auto shape = test();
     shape->draw();
 
@@ -148,6 +180,25 @@ int main(void)
     image->display();
     cout << endl;
     image->display();
+
+    cout << "状态模式" << endl;
+    Context context;
+    context.getInstance()->doAction1();
+    context.getInstance()->doAction2();
+    context.getInstance()->doAction3();
+    RRC_SETUP_COMPLETE *rrc = new RRC_SETUP_COMPLETE();
+    context.setState(rrc);
+    context.getInstance()->doAction1();
+    context.getInstance()->doAction2();
+    context.getInstance()->doAction3();
+#endif
+    cout << "拷贝赋值函数测试" << endl;
+    MyClass *myClass = new MyClass("132");
+    MyClass myClass1 = *myClass;
+    cout << myClass1.Getptstring().use_count() << endl;
+    MyClass myClass2;
+    myClass2 = *myClass;
+    delete myClass;
 
     return 0;
 }
