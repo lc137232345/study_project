@@ -19,7 +19,7 @@ include_directories(${PROJECT_SOURCE_DIR}/pub/include)
 # 并将名称保存到 DIR_SRCS 变量
 aux_source_directory(./src DIR_SRCS)
 
-# 添加  子目录
+# 添加子目录
 add_subdirectory(desgin_mode)
 # 指定生成目标 
 add_executable(Demo ${DIR_SRCS})

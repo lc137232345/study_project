@@ -7,6 +7,6 @@ include_directories(${PROJECT_SOURCE_DIR}/pub/include
 #include_directories(desgin_mode/include/Factory
  #  desgin_mode/include/Singleton )
 
-add_subdirectory(./ut)
+add_subdirectory(./test)
 # 生成链接库
 add_library (DESIGN ${DIR_LIB_SRCS})
