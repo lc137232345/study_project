@@ -1,17 +1,16 @@
 cmake_minimum_required(VERSION 3.6)
  
 # 需包含的头文件
-#INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
+#INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/pub/include)
 # 需包含的库文件
 link_directories(
-   # ${PROJECT_BINARY_DIR}/lib
-    /usr/lib/gtest
+    ${PROJECT_SOURCE_DIR}/third_party/lib/
 )
 
 find_package(Threads)
 
 AUX_SOURCE_DIRECTORY(. DIR_SRC_TESTS)
-add_executable(test_sult ${DIR_SRC_TESTS})
+add_executable(test_sult EXCLUDE_FROM_ALL ${DIR_SRC_TESTS})
 TARGET_LINK_LIBRARIES(test_sult gtest gtest_main)
  
 TARGET_LINK_LIBRARIES(test_sult ${CMAKE_THREAD_LIBS_INIT})

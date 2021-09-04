@@ -12,7 +12,10 @@
 class Square : public Shape
 {
 public:
-    void draw();
+    void draw()
+    {
+        std::cout << "Inside Square::draw() method." << std::endl;
+    };
     ~Square() { cout << "~Square()" << endl; }
 };
 #endif //

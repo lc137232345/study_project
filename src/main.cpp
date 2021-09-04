@@ -22,6 +22,7 @@
 #include "Mediator.h"
 #include "Proxy.h"
 #include "State.h"
+#include "logger.h"
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -144,8 +145,9 @@ int main(void)
     entity->charge();
 
     cout << "桥接模式" << endl;
-#endif
+
     // shared_ptr<AShape> shape = make_shared<CircleBridge>(100, 100, 10, new RedCircle());
+  //  XLOG_INFO("HELLO WORLD");
     AShape *shape1 = new CircleBridge(100, 100, 10, new GreenCircle());
     shape1->draw();
 
@@ -180,8 +182,12 @@ int main(void)
     image->display();
     cout << endl;
     image->display();
+#endif
+    XLOG_INFO("HELLO WORLD");
 
-    cout << "状态模式" << endl;
+    Rectangle *shape = new Rectangle();
+    shape->test();
+    cout<< "状态模式" << endl;
     Context context;
     context.getInstance()->doAction1();
     context.getInstance()->doAction2();
@@ -191,7 +197,7 @@ int main(void)
     context.getInstance()->doAction1();
     context.getInstance()->doAction2();
     context.getInstance()->doAction3();
-    
+
     cout << "拷贝赋值函数测试" << endl;
     MyClass *myClass = new MyClass("132");
     MyClass myClass1 = *myClass;

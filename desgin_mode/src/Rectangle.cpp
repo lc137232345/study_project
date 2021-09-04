@@ -13,3 +13,8 @@ void Rectangle::draw()
 {
     std::cout << "Inside Rectangle::draw() method." << std::endl;
 }
+
+void Rectangle::test()
+{
+    std::cout << "Inside Rectangle::test() method." << std::endl;
+}

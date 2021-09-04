@@ -15,14 +15,17 @@ set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 
 include_directories(${PROJECT_SOURCE_DIR}/desgin_mode/include)
 include_directories(${PROJECT_SOURCE_DIR}/pub/include)
+include_directories(${PROJECT_SOURCE_DIR}/third_party/include/)
 # 查找当前目录下的所有源文件
 # 并将名称保存到 DIR_SRCS 变量
 aux_source_directory(./src DIR_SRCS)
 
+find_package(Threads)
 # 添加子目录
 add_subdirectory(desgin_mode)
 # 指定生成目标 
 add_executable(Demo ${DIR_SRCS})
-
 # 添加链接库
-target_link_libraries(Demo DESIGN )
+TARGET_LINK_LIBRARIES(Demo DESIGN ${CMAKE_THREAD_LIBS_INIT})
+#target_link_libraries(Demo pthread)
+

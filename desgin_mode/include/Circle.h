@@ -13,7 +13,10 @@
 class Circle : public Shape
 {
 public:
-    void draw();
+    void draw()
+    {
+        std::cout << "Inside Circle::draw() method." << std::endl;
+    };
     ~Circle() { cout << "~Circle()" << endl; }
 };
 #endif

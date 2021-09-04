@@ -13,6 +13,7 @@ class Rectangle : public Shape
 {
 public:
     void draw();
+    void test();
     Rectangle() = default;
     Rectangle(const std::string &name) : m_strData(name)
     {
