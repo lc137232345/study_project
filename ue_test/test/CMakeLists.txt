@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
  
 # 需包含的头文件
-#INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/pub/include)
+INCLUDE_DIRECTORIES(../inc)
 # 需包含的库文件
 link_directories(
     ${PROJECT_SOURCE_DIR}/third_party/lib/
@@ -9,12 +9,12 @@ link_directories(
 
 find_package(Threads)
 
-AUX_SOURCE_DIRECTORY(. DIR_SRC_TESTS)
-aux_source_directory(../src DIR_SRC_DESIGNMODE)
-add_executable(test_sult EXCLUDE_FROM_ALL ${DIR_SRC_TESTS} ${DIR_SRC_DESIGNMODE})
-TARGET_LINK_LIBRARIES(test_sult gtest gtest_main)
+AUX_SOURCE_DIRECTORY(. DIR_SRC_UE_TESTS)
+AUX_SOURCE_DIRECTORY(../src  DIR_SRC_UE_SRC)
+add_executable(test_ue_sult  ${DIR_SRC_UE_TESTS} ${DIR_SRC_UE_SRC})
+TARGET_LINK_LIBRARIES(test_ue_sult gtest gtest_main)
  
-TARGET_LINK_LIBRARIES(test_sult ${CMAKE_THREAD_LIBS_INIT})
+TARGET_LINK_LIBRARIES(test_ue_sult ${CMAKE_THREAD_LIBS_INIT})
  
 #这个必须放在project的后面
 IF(MSVC)

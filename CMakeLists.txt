@@ -23,9 +23,10 @@ aux_source_directory(./src DIR_SRCS)
 find_package(Threads)
 # 添加子目录
 add_subdirectory(desgin_mode)
+add_subdirectory(ue_test)
 # 指定生成目标 
 add_executable(Demo ${DIR_SRCS})
 # 添加链接库
-TARGET_LINK_LIBRARIES(Demo DESIGN ${CMAKE_THREAD_LIBS_INIT})
+TARGET_LINK_LIBRARIES(Demo  UE DESIGN   ${CMAKE_THREAD_LIBS_INIT})
 #target_link_libraries(Demo pthread)
 

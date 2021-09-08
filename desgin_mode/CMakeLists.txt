@@ -2,7 +2,8 @@
 # 并将名称保存到 DIR_LIB_SRCS 变量
 aux_source_directory(./src DIR_LIB_design_SRC)
 
-include_directories(${PROJECT_SOURCE_DIR}/pub/include) 
+include_directories(${PROJECT_SOURCE_DIR}/pub/include)
+include_directories(./inc) 
 
 add_subdirectory(./test)
 # 生成链接库
