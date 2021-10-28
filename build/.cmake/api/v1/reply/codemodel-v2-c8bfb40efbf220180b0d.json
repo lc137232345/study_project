@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "desgin_mode",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-desgin_mode-Release-67353bc13434141eab9a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "desgin_mode",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "desgin_mode/test",
+					"jsonFile" : "directory-desgin_mode.test-Release-54ba2e44d4db4f8761b0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "desgin_mode/test",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "ue_test",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-ue_test-Release-931e92a3a6aba4fa2214.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ue_test",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "ue_test/test",
+					"jsonFile" : "directory-ue_test.test-Release-303648160e2bcf2ef983.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "ue_test/test",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "Demo3",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "DESIGN::@891890b6832d1b3d13d0",
+					"jsonFile" : "target-DESIGN-Release-da7daad112df1219cf2f.json",
+					"name" : "DESIGN",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Demo-Release-5fbd56c1a22f0ef6903e.json",
+					"name" : "Demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "UE::@913985caaa086c4f11e1",
+					"jsonFile" : "target-UE-Release-22044e0b568665d90f57.json",
+					"name" : "UE",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "test_sult::@e7a0bef860d391efe942",
+					"jsonFile" : "target-test_sult-Release-bcd04b3bc8d96de59a12.json",
+					"name" : "test_sult",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "test_ue_sult::@212d2dbd4b4510c3f0ca",
+					"jsonFile" : "target-test_ue_sult-Release-1d9f039989d88ee8d8e9.json",
+					"name" : "test_ue_sult",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/lc/code/study_project/build",
+		"source" : "/home/lc/code/study_project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

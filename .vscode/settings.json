@@ -43,6 +43,12 @@
         "typeinfo": "cpp",
         "bitset": "cpp",
         "iomanip": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "cstddef": "cpp",
+        "algorithm": "cpp",
+        "any": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "memory": "cpp"
     }
 }

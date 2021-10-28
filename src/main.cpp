@@ -23,6 +23,8 @@
 #include "Proxy.h"
 #include "State.h"
 #include "logger.h"
+#include "MyTimer.h"
+#include <chrono>
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -182,7 +184,7 @@ int main(void)
     image->display();
     cout << endl;
     image->display();
-#endif
+
     XLOG_INFO("HELLO WORLD");
 
     Rectangle *shape = new Rectangle();
@@ -205,6 +207,20 @@ int main(void)
     MyClass myClass2;
     myClass2 = *myClass;
     delete myClass;
+#endif
+#if 0
+    chrono::hours hour{2};
+
+    auto start = std::chrono::system_clock::now();
+    // do something...
+    auto end = std::chrono::system_clock::now();
+    // const int64_t duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    //   cout << "花费了"
+    //     << double(duration.count()) * std::chrono::microseconds::period::num / std::chrono::microseconds::period::den << "秒" << endl;
+#endif
+    MyTimer time;
+
+    cout << time.elapsed_nano() << " nanoseconds" << endl;
 
     return 0;
 }
