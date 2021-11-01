@@ -25,6 +25,7 @@
 #include "logger.h"
 #include "MyTimer.h"
 #include <chrono>
+#include <thread>
 std::mutex mutex1; //定义锁
 
 void *tfn(void *arg)
@@ -118,6 +119,46 @@ private:
     string m_strData;
     shared_ptr<string> ptstring;
 };
+
+void hello()
+{
+    std::cout << "Hello world!" << std::endl;
+}
+
+int i = 0;
+class background_task
+{
+private:
+    /* data */
+public:
+    background_task(/* args */);
+    ~background_task();
+    void operator()(/* args */) const
+    {
+        do_something();
+        do_something_else();
+    };
+
+    void do_something() const
+    {
+        std::cout << "do_something" << std::endl;
+    }
+
+    void do_something_else() const
+    {
+        std::cout << "do_something_else" << std::endl;
+    }
+};
+
+background_task::background_task(/* args */)
+{
+    std::cout << "background_task is setup" << std::endl;
+}
+
+background_task::~background_task()
+{
+    std::cout << "background_task is destroy " << i++ << std::endl;
+}
 
 int main(void)
 {
@@ -217,11 +258,17 @@ int main(void)
     // const int64_t duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
     //   cout << "花费了"
     //     << double(duration.count()) * std::chrono::microseconds::period::num / std::chrono::microseconds::period::den << "秒" << endl;
-#endif
+
+
+    // 测试时间打点函数
     MyTimer time;
 
     cout << time.elapsed_nano() << " nanoseconds" << endl;
+#endif
 
+    background_task f;
+    std::thread t2(f);
+    t2.join();
     return 0;
 }
 
