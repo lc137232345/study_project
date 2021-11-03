@@ -44,3 +44,10 @@ TEST(Test_Calc, Test_Calc_Add2_Test)
     EXPECT_TRUE(8 == 8);
     //EXPECT_TRUE(6==8);
 }
+
+
+
+TEST(Test_Calc, Test_Calc_Add3_Test)
+{
+
+}

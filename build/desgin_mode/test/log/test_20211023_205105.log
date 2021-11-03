@@ -1,0 +1,4 @@
+2021-10-23 20:51:05.139500 <thread 6473> [debug] [/home/lc/code/study_project/desgin_mode/test/Mytest.cpp:26] this is debug log record, param: 3
+2021-10-23 20:51:05.139507 <thread 6473> [info] [/home/lc/code/study_project/desgin_mode/test/Mytest.cpp:27] this is info log record, param: 4
+2021-10-23 20:51:05.139517 <thread 6473> [warning] [/home/lc/code/study_project/desgin_mode/test/Mytest.cpp:28] this is warn log record, param: 5
+2021-10-23 20:51:05.139521 <thread 6473> [error] [/home/lc/code/study_project/desgin_mode/test/Mytest.cpp:29] this is error log record, param: 6

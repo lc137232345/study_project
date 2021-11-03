@@ -9,6 +9,7 @@
 #include "spdlog/sinks/stdout_color_sinks.h" // or "../stdout_sinks.h" if no color needed
 #include "spdlog/sinks/basic_file_sink.h"
 #include "spdlog/sinks/rotating_file_sink.h"
+#include "spdlog/sinks/dup_filter_sink.h"
 
 static inline int NowDateToInt()
 {
