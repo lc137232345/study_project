@@ -77,19 +77,19 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/lc/code/study_project/desgin_mode/include"
+					"path" : "/home/code/study_project/desgin_mode/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/lc/code/study_project/pub/include"
+					"path" : "/home/code/study_project/pub/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/lc/code/study_project/third_party/include"
+					"path" : "/home/code/study_project/third_party/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lc/code/study_project/third_party/include/timer"
+					"path" : "/home/code/study_project/third_party/include/timer"
 				}
 			],
 			"language" : "CXX",
@@ -111,11 +111,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "DESIGN::@891890b6832d1b3d13d0"
+			"id" : "UE::@913985caaa086c4f11e1"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "UE::@913985caaa086c4f11e1"
+			"id" : "DESIGN::@891890b6832d1b3d13d0"
 		}
 	],
 	"id" : "Demo::@6890427a1f51a3e7e1df",

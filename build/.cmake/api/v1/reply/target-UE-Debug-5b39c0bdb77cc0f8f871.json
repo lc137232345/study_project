@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "desgin_mode/libDESIGN.a"
+			"path" : "ue_test/libUE.a"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +16,7 @@
 		],
 		"files" : 
 		[
-			"desgin_mode/CMakeLists.txt",
+			"ue_test/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -81,23 +81,23 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/lc/code/study_project/desgin_mode/include"
+					"path" : "/home/code/study_project/desgin_mode/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/lc/code/study_project/pub/include"
+					"path" : "/home/code/study_project/pub/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/lc/code/study_project/third_party/include"
+					"path" : "/home/code/study_project/third_party/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lc/code/study_project/third_party/include/timer"
+					"path" : "/home/code/study_project/third_party/include/timer"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/home/lc/code/study_project/desgin_mode/./inc"
+					"path" : "/home/code/study_project/ue_test/./inc"
 				}
 			],
 			"language" : "CXX",
@@ -111,17 +111,18 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "DESIGN::@891890b6832d1b3d13d0",
-	"name" : "DESIGN",
-	"nameOnDisk" : "libDESIGN.a",
+	"id" : "UE::@913985caaa086c4f11e1",
+	"name" : "UE",
+	"nameOnDisk" : "libUE.a",
 	"paths" : 
 	{
-		"build" : "desgin_mode",
-		"source" : "desgin_mode"
+		"build" : "ue_test",
+		"source" : "ue_test"
 	},
 	"sourceGroups" : 
 	[
@@ -129,7 +130,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -138,7 +140,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "desgin_mode/src/Rectangle.cpp",
+			"path" : "ue_test/src/ue_test.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ue_test/src/umm_dbg_attch_case.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

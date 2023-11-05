@@ -104,23 +104,23 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/home/lc/code/study_project/desgin_mode/include"
+					"path" : "/home/code/study_project/desgin_mode/include"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "/home/lc/code/study_project/pub/include"
+					"path" : "/home/code/study_project/pub/include"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/home/lc/code/study_project/third_party/include"
+					"path" : "/home/code/study_project/third_party/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/home/lc/code/study_project/third_party/include/timer"
+					"path" : "/home/code/study_project/third_party/include/timer"
 				},
 				{
 					"backtrace" : 11,
-					"path" : "/home/lc/code/study_project/desgin_mode/./inc"
+					"path" : "/home/code/study_project/desgin_mode/./inc"
 				}
 			],
 			"language" : "CXX",
@@ -156,11 +156,11 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/home/lc/code/study_project/third_party/lib",
+				"fragment" : "-L/home/code/study_project/third_party/lib",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/lc/code/study_project/third_party/lib",
+				"fragment" : "-Wl,-rpath,/home/code/study_project/third_party/lib",
 				"role" : "libraries"
 			},
 			{

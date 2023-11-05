@@ -124,9 +124,7 @@ private:
 		spdlog::drop_all(); // must do this
 	}
 
-	void *operator new(size_t size)
-	{
-	}
+
 
 	XLogger(const XLogger &) = delete;
 	XLogger &operator=(const XLogger &) = delete;
